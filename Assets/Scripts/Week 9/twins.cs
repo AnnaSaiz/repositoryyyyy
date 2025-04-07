@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeEnemy : BaseEnemy
-
+public class twins : BaseEnemy
 {
-    public AudioSource bloop;
-    public AudioSource eh;
+    public AudioSource oof;
+    public AudioSource mwahaha;
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
 
-        Debug.Log("HeeHo I'm a slime!");
+        Debug.Log("HeeHo were a twins!");
     }
 
     // Update is called once per frame
@@ -26,18 +25,18 @@ public class SlimeEnemy : BaseEnemy
     {
         base.Attack();
         Debug.Log(this.gameObject.name + " deals " + attackDamage + " damage to you!");
-        eh.Play();
+        mwahaha.Play();
     }
 
     public override void TakeDamage(float damage)
     {
-        bloop.Play();
+        oof.Play();
         base.TakeDamage(damage);
        
     }
     public override void TakeShootDamage(bullrt Shootdamage)
     {
-        bloop.Play();
+        oof.Play();
         base.TakeShootDamage(Shootdamage);
     }
 

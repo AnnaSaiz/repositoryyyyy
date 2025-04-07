@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerRPG : MonoBehaviour
 {
     public float health = 100f;
-    public float attackDamage = 5f;
+    public float attackDamage = 15f;
     public float attackInterval = 1f;
 
     private float timer;
     private bool isAttackReady = true;
 
     public Image attackReadyImage;
+
+    public TextMeshProUGUI healthBar;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -65,10 +69,16 @@ public class PlayerRPG : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        UpdateHealth();
 
         if (health <= 0)
         {
             Debug.Log("YOU DIED");
         }
+    }
+
+    void UpdateHealth()
+    {
+        healthBar.text = health.ToString();
     }
 }
